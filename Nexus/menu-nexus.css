@@ -1,14 +1,283 @@
-* {
+/* Estilos globais */
+body {
+    background-color: #202020;
+    color: white;
+    font-family: 'Abyssinica SIL', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    background-color: #202020;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 10%;
-    background-color: #202020;
+    padding: 20px;
+    background-color: #333;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 90px;
+    margin-right: 10px;
+}
+
+.logotipo {
+    font-family: 'Antic Didone', serif;
+    font-size: 40px;
+    font-weight: 90;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-family: Abyssinica SIL, sans-serif;
+}
+
+.header-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.config-button,
+.login-icon {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.config-button>img {
+    width: 65px;
+    height: 50px;
+}
+
+.login-icon>img {
+    width: 50px;
+    height: 50px;
+}
+
+
+/* Carousel */
+.carousel {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.carousel-images {
+    display: flex;
+    animation: slide 10s infinite;
+}
+
+.carousel-images img {
+    height: 900vh;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+
+    33% {
+        transform: translateX(-100%);
+    }
+
+    66% {
+        transform: translateX(-200%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+hr {
+    border: 1px solid white;
+    margin: 20px 0;
+}
+
+/* Colaboradores */
+.colaboradores h2 {
+    font-family: 'Arbutus Slab', serif;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 400;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 159px);
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card {
+    width: 159px;
+    height: 177px;
+    background-color: #d9d9d9;
+    border-radius: 25px 25px 25px 25px;
+    opacity: 100%;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 25px 25px 25px 25px;
+}
+
+.card:hover {
+    background-color: #667781;
+    opacity: 100%;
+    transform: scale(1.05);
+}
+
+/* Finanças */
+.financas {
+    padding: 20px;
+    text-align: left;
+}
+
+.financas h3 {
+    font-family: 'Antic Didone', serif;
+    font-size: 50px;
+    font-weight: 400;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #ABABAB;
+    color: black;
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Abyssinica SIL', sans-serif;
+    margin-right: 15px;
+}
+
+.social-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: black;
+}
+
+.social-button i {
+    font-size: 40px;
+}
+
+/* Media Queries para Responsividade */
+
+/* Telas grandes - Ajustes para desktop */
+@media (min-width: 1024px) {
+    .cards {
+        grid-template-columns: repeat(4, 159px);
+    }
+
+    .carousel-images img {
+        max-height: 400px;
+    }
+}
+
+/* Telas médias - Tablets */
+@media (max-width: 1024px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 cards por linha */
+        gap: 10px;
+    }
+
+    .carousel-images img {
+        max-height: 300px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    header {
+        flex-direction: column;
+    }
+
+    .header-icons {
+        justify-content: flex-end;
+    }
+}
+
+/* Telas pequenas - Dispositivos móveis */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        /* Oculta o menu para mobile */
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(1, 1fr);
+        /* 1 card por linha */
+        gap: 10px;
+    }
+
+    .carousel-images img {
+        max-height: 200px;
+    }
+
+    .financas h3 {
+        text-align: center;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cards {
+        gap: 5px;
+    }
+
+    .logo {
+        height: 30px;
+    }
+
+    .header-icons {
+        justify-content: center;
+    }
+
+    .footer-left,
+    .footer-right {
+        flex-direction: column;
+        align-items: center;
+    }
 }
