@@ -11,8 +11,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 25px 30px; /* Aumentado o padding para expandir o fundo cinza */
     background-color: #333;
+}
+
+.logotipo {
+    font-size: 32px; /* Reduzido o tamanho do logotipo */
 }
 
 /* Menu Mobile */
@@ -71,25 +75,14 @@ header {
     display: none;
 }
 
-/* Media Queries para Mobile */
-@media(max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-
-    .hamburger {
-        display: block;
-    }
-}
-
-
 .logo-container {
     display: flex;
     align-items: center;
+    gap: 15px; /* Adicionado gap entre logo e logotipo */
 }
 
 .logo {
-    height: 90px;
+    height: 70px; /* Ajustado para tamanho mais proporcional */
     margin-right: 10px;
 }
 
@@ -102,7 +95,8 @@ header {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 25px; /* Aumentado o espaçamento entre itens */
+    margin: 0; /* Removido qualquer margem extra */
 }
 
 nav ul li a {
@@ -113,7 +107,8 @@ nav ul li a {
 
 .header-icons {
     display: flex;
-    gap: 10px;
+    gap: 20px; /* Aumentado o gap entre ícones */
+    align-items: center; /* Centralizado verticalmente */
 }
 
 .config-button,
@@ -123,6 +118,8 @@ nav ul li a {
     color: white;
     font-size: 20px;
     cursor: pointer;
+    width: 40px; /* Diminuído o tamanho para 40px */
+    height: 40px;
 }
 
 .config-button>img {
@@ -146,7 +143,7 @@ nav ul li a {
 
 .carousel-images {
     display: flex;
-    animation: slide 10s infinite;
+    animation: slide 20s infinite;
 }
 
 .carousel-images img {
