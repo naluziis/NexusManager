@@ -1,13 +1,12 @@
+// Script para menu hamburguer
 const hamburgerButton = document.getElementById('hamburgerButton');
 const mobileMenu = document.getElementById('mobileMenu');
 const closeButton = document.getElementById('closeButton');
 
-// Abrir o menu mobile ao clicar no botão hamburguer
 hamburgerButton.addEventListener('click', () => {
-    mobileMenu.style.display = 'flex';
+    mobileMenu.classList.add('active');
 });
 
-// Fechar o menu mobile ao clicar no botão de fechar
 closeButton.addEventListener('click', () => {
-    mobileMenu.style.display = 'none';
+    mobileMenu.classList.remove('active');
 });
