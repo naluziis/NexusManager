@@ -1,146 +1,70 @@
 /* Estilos globais */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     background-color: #202020;
     color: white;
     font-family: 'Abyssinica SIL', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-/* Header */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px; /* Diminuído o padding para um tamanho menor */
+    padding: 20px;
     background-color: #333;
-    position: relative;
 }
 
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 8px; /* Reduzido o espaço entre logo e logotipo */
 }
 
 .logo {
-    height: 40px; /* Reduzido o tamanho da logo */
-    width: auto;
+    height: 90px;
+    margin-right: 10px;
 }
 
 .logotipo {
-    font-size: 20px; /* Reduzido o tamanho da fonte do logotipo */
     font-family: 'Antic Didone', serif;
-    color: #fff;
+    font-size: 40px;
+    font-weight: 90;
 }
 
-.nav-links {
+nav ul {
     list-style: none;
     display: flex;
-    gap: 15px; /* Reduzido o espaçamento entre os links */
-    margin: 0;
-    padding: 0;
-    flex: 1;
-    justify-content: center;
+    gap: 20px;
 }
 
-.nav-links li a {
+nav ul li a {
     text-decoration: none;
     color: white;
-    font-size: 14px; /* Reduzido o tamanho da fonte dos links */
-    transition: color 0.3s;
-}
-
-.nav-links li a:hover {
-    color: #ddd;
+    font-family: Abyssinica SIL, sans-serif;
 }
 
 .header-icons {
     display: flex;
-    gap: 10px; /* Reduzido o espaço entre os ícones */
-    align-items: center;
+    gap: 10px;
 }
 
-.config-button {
+.config-button,
+.login-icon {
     background: none;
     border: none;
     color: white;
-    font-size: 18px; /* Reduzido o tamanho do ícone */
+    font-size: 20px;
     cursor: pointer;
 }
 
-/* Menu mobile */
-.hamburger {
-    display: none;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 20px; /* Reduzido o tamanho do ícone do menu */
-    cursor: pointer;
+.config-button>img {
+    width: 65px;
+    height: 50px;
 }
 
-.mobile-menu {
-    display: none;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 60%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    font-size: 1.5rem;
-    z-index: 1000;
-}
-
-.nav-links-mobile {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px; /* Reduzido o espaço entre os links no mobile */
-    margin: 0;
-}
-
-.nav-links-mobile a {
-    color: white;
-    text-decoration: none;
-    font-size: 14px; /* Reduzido o tamanho da fonte no menu mobile */
-}
-
-.config-mobile {
-    width: 30px;
-    height: 30px; /* Reduzido o tamanho do ícone de configurações no mobile */
-}
-
-.close {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 22px;
-    cursor: pointer;
-    align-self: flex-end;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-    .header-icons {
-        display: none;
-    }
-    .hamburger {
-        display: block;
-    }
-    .mobile-menu.active {
-        display: flex;
-    }
+.login-icon>img {
+    width: 50px;
+    height: 50px;
 }
 
 
@@ -154,14 +78,31 @@ header {
 
 .carousel-images {
     display: flex;
-    transition: transform 0.5s ease;
+    animation: slide 10s infinite;
 }
 
 .carousel-images img {
+    height: 900vh;
     width: 100%;
-    height: 300px; /* Ajuste para que as imagens não sejam cortadas */
-    object-fit: cover;
     flex-shrink: 0;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+
+    33% {
+        transform: translateX(-100%);
+    }
+
+    66% {
+        transform: translateX(-200%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
 
 hr {
@@ -189,7 +130,8 @@ hr {
     width: 159px;
     height: 177px;
     background-color: #d9d9d9;
-    border-radius: 25px;
+    border-radius: 25px 25px 25px 25px;
+    opacity: 100%;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
     display: flex;
@@ -200,12 +142,102 @@ hr {
 .card img {
     width: 100%;
     height: auto;
-    border-radius: 25px;
+    border-radius: 25px 25px 25px 25px;
 }
 
 .card:hover {
     background-color: #667781;
+    opacity: 100%;
     transform: scale(1.05);
+}
+
+/* Finanças */
+.financas {
+    padding: 20px;
+    text-align: left;
+    padding: 15vh; /* vh é utilizado para usar a (viewpoet height)*/
+}
+
+.div-paragrafo p {
+    font-size: 3em;
+    font-family: serif;
+}
+
+.div-paragrafo span {
+    color: yellow;
+    font-weight: 700;
+}
+
+.div-pai {
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+}
+
+.div-pai div {
+    width: 15rem;
+    height: 15rem;
+}
+
+/* caixa01 */
+.caixa01 {
+    background-image: url(img/caixa01.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    /* display: flex;
+    flex-direction: column;
+    align-items: end; */
+}
+
+.caixa01 p {
+    background-color: #333333b6;
+    padding: 1.5rem;
+    margin-top: 6rem;
+}
+/* caixa01 */
+
+/* caixa02 */
+.caixa02 {
+    background-image: url(img/caixa02.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    /* display: flex;
+    flex-direction: column;
+    align-items: end; */
+}
+
+.caixa02 p {
+    background-color: #333333b6;
+    padding: 1.5rem;
+    margin-top: 6rem;
+}
+/* caixa02 */
+
+/* caixa03 */
+.caixa03 {
+    background-image: url(img/caixa03.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    /* display: flex;
+    flex-direction: column;
+    align-items: end; */
+}
+
+.caixa03 p {
+    background-color: #333333b6;
+    padding: 1.5rem;
+    margin-top: 6rem;
+}
+/* caixa03 */
+
+
+.financas h3 {
+    font-family: 'Antic Didone', serif;
+    font-size: 50px;
+    font-weight: 400;
 }
 
 /* Footer */
@@ -231,4 +263,98 @@ footer a {
     font-size: 24px;
     cursor: pointer;
     color: black;
+}
+
+.social-button i {
+    font-size: 40px;
+}
+
+/* Media Queries para Responsividade */
+
+/* Telas grandes - Ajustes para desktop */
+@media (min-width: 1024px) {
+    .cards {
+        grid-template-columns: repeat(4, 159px);
+    }
+
+    .carousel-images img {
+        max-height: 400px;
+    }
+}
+
+/* Telas médias - Tablets */
+@media (max-width: 1024px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 cards por linha */
+        gap: 10px;
+    }
+
+    .carousel-images img {
+        max-height: 300px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    header {
+        flex-direction: column;
+    }
+
+    .header-icons {
+        justify-content: flex-end;
+    }
+}
+
+/* Telas pequenas - Dispositivos móveis */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        /* Oculta o menu para mobile */
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(1, 1fr);
+        /* 1 card por linha */
+        gap: 10px;
+    }
+
+    .carousel-images img {
+        max-height: 200px;
+    }
+
+    .financas h3 {
+        text-align: center;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cards {
+        gap: 5px;
+    }
+
+    .logo {
+        height: 30px;
+    }
+
+    .header-icons {
+        justify-content: center;
+    }
+
+    .footer-left,
+    .footer-right {
+        flex-direction: column;
+        align-items: center;
+    }
 }
