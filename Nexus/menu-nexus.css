@@ -232,3 +232,14 @@ footer a {
     cursor: pointer;
     color: black;
 }
+
+
+
+.next-btn {
+    right: -10px;
+}
+
+.carousel-btn:hover {
+    background-color: #666;
+}
+

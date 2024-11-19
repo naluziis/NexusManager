@@ -34,8 +34,15 @@
                     gerenciar suas finanças de maneira eficaz e alcançar seus objetivos financeiros. Acreditamos que a
                     educação financeira é a chave para um futuro seguro e próspero.</p>
             </div>
-            <div class="image-content">
-                <img src="img/mulher 2 trabalhando.avif" alt="Profissional no ambiente de trabalho">
+            <div class="image-content carousel">
+                <button class="carousel-btn prev-btn">&#9664;</button>
+                <div class="carousel-images">
+                    <img src="img/mulher 2 trabalhando.avif" alt="Profissional no ambiente de trabalho"
+                        class="carousel-image">
+                    <img src="img/bloco 3.webp" alt="Equipe de trabalho colaborando" class="carousel-image">
+                    <img src="img/img mao globo.avif" alt="Análise financeira em progresso" class="carousel-image">
+                </div>
+                <button class="carousel-btn next-btn">&#9654;</button>
             </div>
         </section>
 
@@ -45,42 +52,73 @@
             <div class="founders-container">
                 <!-- Bloco de cada fundador -->
                 <div class="founder-card">
-                    <img src="img/user icon.png" alt="Foto de Luiza Souza de Ramalho" class="founder-image">
+                    <img src="img/luiza-picrew.png" alt="Foto de Luiza Souza de Ramalho" class="founder-image">
                     <h3>Luiza Souza de Ramalho</h3>
                     <ul>
                         <li><strong>Função:</strong> CEO</li>
-                        <li><strong>Idade:</strong> 35</li>
-                        <li><strong>Hobbies:</strong> Leitura, Viagens, Esportes</li>
+                        <li><strong>Idade:</strong> 18</li>
+                        <li><strong>Trabalhos: </strong> Design, Construção, Projeto</li>
                     </ul>
                 </div>
 
                 <div class="founder-card">
-                    <img src="img/user icon.png" alt="Foto de Ana Luisa Lucena de Oliveira" class="founder-image">
-                    <h3>Ana Luisa Lucena de Oliveira</h3>
+                    <img src="img/nalu-picrew.png" alt="Foto de Ana Luisa Lucena de Oliveira" class="founder-image">
+                    <h3>Ana Luiza Lucena de Oliveira</h3>
                     <ul>
                         <li><strong>Função:</strong> CFO</li>
-                        <li><strong>Idade:</strong> 32</li>
-                        <li><strong>Hobbies:</strong> Música, Pintura, Yoga</li>
+                        <li><strong>Idade:</strong> 17</li>
+                        <li><strong>Trabalhos:</strong> Design, Escrita, Suporte</li>
                     </ul>
                 </div>
 
                 <div class="founder-card">
-                    <img src="img/user icon.png" alt="Foto de Samuel de Oliveira Andrade" class="founder-image">
+                    <img src="img/skta-picrew.png" alt="Foto de Samuel de Oliveira Andrade" class="founder-image">
                     <h3>Samuel de Oliveira Andrade</h3>
                     <ul>
                         <li><strong>Função:</strong> CTO</li>
-                        <li><strong>Idade:</strong> 38</li>
-                        <li><strong>Hobbies:</strong> Tecnologia, Corrida, Culinária</li>
+                        <li><strong>Idade: </strong> 18</li>
+                        <li><strong>Trabalhos: </strong> Design, Construção, Suporte</li>
                     </ul>
                 </div>
 
             </div>
         </section>
+
     </main>
 
     <footer>
         <p>&copy; 2024 NexusManager. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        const carouselImages = document.querySelector('.carousel-images');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+    
+        let currentImageIndex = 0;
+    
+        function updateCarousel() {
+            const imageWidth = document.querySelector('.carousel-image').offsetWidth;
+            carouselImages.style.transform = `translateX(-${currentImageIndex * imageWidth}px)`;
+        }
+    
+        prevBtn.addEventListener('click', () => {
+            const totalImages = document.querySelectorAll('.carousel-image').length;
+            currentImageIndex = (currentImageIndex - 1 + totalImages) % totalImages; // Volta para o último ao passar do início
+            updateCarousel();
+        });
+    
+        nextBtn.addEventListener('click', () => {
+            const totalImages = document.querySelectorAll('.carousel-image').length;
+            currentImageIndex = (currentImageIndex + 1) % totalImages; // Vai para o primeiro ao passar do final
+            updateCarousel();
+        });
+    
+        window.addEventListener('resize', updateCarousel); // Atualiza ao redimensionar a janela
+    </script>
+    
+
+
 </body>
 
 </html>
