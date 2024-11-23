@@ -1,4 +1,4 @@
-/* Reset */
+/* Style - Contatos */
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +13,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: calc(100vh + 50px); /* Adicionado espaço extra ao body */
+    min-height: 100vh;
     padding-bottom: 50px; /* Espaço inferior para o footer */
 }
 
@@ -31,20 +31,19 @@ header {
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: -15px;
 }
 
 .logo-image {
-    width: 60px; /* Aumentado de 50px para 60px */
-    height: 60px; /* Aumentado para manter a proporção */
+    width: 130px;
+    height: 130px;
 }
 
 .logotipo {
-    font-size: 36px; /* Aumentado de 32px para 36px */
+    font-size: 36px;
     color: #fff;
     font-family: 'Antic Didone', serif;
 }
-
 
 /* Seção de introdução */
 .intro-section {
@@ -58,7 +57,6 @@ header {
     font-size: 28px;
     margin-bottom: 10px;
     color: white;
-    font-family: 'Arial', sans-serif;
 }
 
 .intro-section p {
@@ -78,23 +76,26 @@ header {
 /* Cards */
 .cards-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
 }
 
 .contact-card {
     background-color: #202020;
-    width: 300px;
-    padding: 25px;
+    width: calc(33% - 20px);
+    max-width: 300px;
+    padding: 20px;
     border-radius: 10px;
     text-align: center;
     transition: transform 0.3s, background-color 0.3s;
+    flex: 1 1 calc(33% - 20px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .contact-card:hover {
     transform: scale(1.05);
-    background-color: #444;
+    background-color: #3c3c3c;
 }
 
 .contact-card i {
@@ -126,6 +127,27 @@ header {
 
 .contact-card .btn:hover {
     background-color: #666;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .contact-card {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-card {
+        width: 100%;
+    }
+
+    .intro-section h2 {
+        font-size: 24px;
+    }
+
+    .intro-section p {
+        font-size: 14px;
+    }
 }
 
 /* Footer */
