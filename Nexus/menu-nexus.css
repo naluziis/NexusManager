@@ -283,93 +283,126 @@ footer a {
     font-size: 40px;
 }
 
-/* Media Queries para Responsividade */
-
-/* Telas grandes - Ajustes para desktop */
-@media (min-width: 1024px) {
-    .cards {
-        grid-template-columns: repeat(4, 159px);
-    }
-
-    .carousel-images img {
-        max-height: 400px;
-    }
-}
-
-/* Telas médias - Tablets */
+/* Responsividade para dispositivos menores */
 @media (max-width: 1024px) {
-    .cards {
-        grid-template-columns: repeat(2, 1fr);
-        /* 2 cards por linha */
-        gap: 10px;
-    }
-
-    .carousel-images img {
-        max-height: 300px;
-    }
-
-    nav ul {
-        gap: 15px;
-    }
-
     header {
-        flex-direction: column;
-    }
-
-    .header-icons {
-        justify-content: flex-end;
-    }
-}
-
-/* Telas pequenas - Dispositivos móveis */
-@media (max-width: 768px) {
-    nav ul {
-        display: none;
-        /* Oculta o menu para mobile */
-    }
-
-    .logo {
-        margin-bottom: 10px;
-    }
-
-    .cards {
-        grid-template-columns: repeat(1, 1fr);
-        /* 1 card por linha */
-        gap: 10px;
-    }
-
-    .carousel-images img {
-        max-height: 200px;
-    }
-
-    .financas h3 {
+        flex-wrap: wrap;
         text-align: center;
+        padding: 10px;
     }
 
-    footer {
+    .logo-container {
         flex-direction: column;
         align-items: center;
-        gap: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    .cards {
-        gap: 5px;
     }
 
     .logo {
-        height: 30px;
+        height: 80px; /* Reduz o tamanho do logo */
+    }
+
+    .logotipo {
+        font-size: 1.5rem; /* Ajusta o tamanho do texto */
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    nav ul li a {
+        font-size: 0.9rem; /* Diminui a fonte do menu */
     }
 
     .header-icons {
         justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
     }
 
-    .footer-left,
-    .footer-right {
+    .config-button img,
+    .login-icon img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel {
+        height: auto; /* Permite que a altura se ajuste */
+    }
+
+    .carousel-images img {
+        object-fit: cover;
+        height: auto; /* Ajusta imagens do carrossel */
+    }
+
+    .colaboradores .cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .card {
+        width: auto;
+        height: auto;
+    }
+
+    .div-paragrafo p {
+        font-size: 1.5em; /* Reduz o texto das finanças */
+        text-align: center;
+    }
+
+    .div-pai {
         flex-direction: column;
-        align-items: center;
+        gap: 20px; /* Adiciona espaço entre as caixas */
+    }
+
+    .div-pai div {
+        width: 100%;
+        max-width: 300px; /* Ajusta o tamanho das caixas */
+        margin: 0 auto;
+    }
+
+    footer {
+        flex-wrap: wrap;
+        text-align: center;
+        padding: 10px;
+    }
+
+    footer a {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .social-button i {
+        font-size: 30px; /* Ajusta o tamanho dos ícones sociais */
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    nav ul li a {
+        font-size: 0.8rem;
+    }
+
+    .carousel-images img {
+        width: 100%;
+    }
+
+    .div-paragrafo p {
+        font-size: 1.2em;
+    }
+
+    .div-pai div {
+        width: 90%;
+    }
+
+    .div-pai div p {
+        font-size: 0.9rem;
     }
 }
 

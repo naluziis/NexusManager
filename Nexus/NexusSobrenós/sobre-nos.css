@@ -226,3 +226,93 @@ footer {
 .carousel-btn:hover {
     background-color: #666;
 }
+
+/* Responsividade para tablets (telas menores que 768px) */
+@media (max-width: 768px) {
+    /* Ajustar header */
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo-container {
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .logotipo {
+        font-size: 28px;
+    }
+
+    /* Ajustar a seção "about-section" */
+    .about-section {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .text-content {
+        padding-right: 0;
+    }
+
+    .image-content img {
+        max-width: 100%;
+        border-radius: 10px;
+    }
+
+    /* Ajustar o carrossel */
+    .carousel-btn {
+        font-size: 20px;
+        padding: 8px;
+    }
+}
+
+/* Responsividade para celulares (telas menores que 480px) */
+@media (max-width: 480px) {
+    /* Ajustar fonte e layout geral */
+    .logotipo {
+        font-size: 22px;
+    }
+
+    .about-section {
+        padding: 10px;
+    }
+
+    .text-content h2 {
+        font-size: 20px;
+    }
+
+    .text-content p {
+        font-size: 14px;
+    }
+
+    /* Seção dos fundadores */
+    .founders-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .founder-card {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .founder-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .founder-card h3 {
+        font-size: 18px;
+    }
+
+    .founder-card ul li {
+        font-size: 12px;
+    }
+
+    /* Footer */
+    footer {
+        font-size: 14px;
+    }
+}
+
