@@ -42,15 +42,6 @@ header {
     margin-right: 30px;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-}
-
-nav a:hover {
-    color: #ffffff;
-}
 
 .header-icons button {
     background: none;
@@ -149,31 +140,11 @@ footer {
     margin-bottom: 20px; /* Espaço extra abaixo do footer */
 }
 
-footer::before {
-    content: "";
-    display: block;
-    height: 10px; /* Pequeno espaço acima do footer */
-}
-.footer-left a {
-    margin-left: 15px;
-    color: #ffffff;
-    font-size: 0.9rem;
+footer > p {
+margin-left: 45rem;
 }
 
-.footer-left a:hover {
-    color: #4caf50;
-}
 
-.footer-right .social-button {
-    color: #ffffff;
-    margin-left: 15px;
-    font-size: 1.2rem;
-    size: 30px;
-}
-
-.footer-right .social-button:hover {
-    color: #4caf50;
-}
 
 /* Ajuste para dispositivos móveis */
 @media (max-width: 768px) {
